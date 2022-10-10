@@ -1,6 +1,6 @@
 package com.cooperfiedler.brewery.services;
 
-import com.cooperfiedler.brewery.web.model.BeerDto;
+import com.cooperfiedler.brewery.web.model.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -8,32 +8,26 @@ import java.util.UUID;
 
 @Slf4j
 @Service
-public class BeerServiceImpl implements BeerService{
+public class CustomerServiceImpl implements CustomerService{
     @Override
-    public BeerDto getBeerById(UUID beerId) {
-
-        return BeerDto.builder()
+    public CustomerDto getCustomerById(UUID customerId) {
+        return CustomerDto.builder()
                 .id(UUID.randomUUID())
-                .beerName("Galaxy Cat")
-                .beerStyle("Pale Ale")
+                .name("Joe Buck")
                 .build();
     }
-
     @Override
-    public BeerDto saveNewBeer(BeerDto beerDto) {
-        return BeerDto.builder()
+    public CustomerDto saveNewCustomer(CustomerDto customerDto) {
+        return CustomerDto.builder()
                 .id(UUID.randomUUID())
                 .build();
     }
-
     @Override
-    public void updateBeer(UUID beerId, BeerDto beerDto) {
+    public void updateCustomer(UUID customerId, CustomerDto customerDto) {
         //todo impl - would add a real impl method here
     }
-
     @Override
-    public void deleteById(UUID beerId) {
+    public void deleteById(UUID customerId) {
         log.debug("Deleting a beer...");
-
     }
 }
